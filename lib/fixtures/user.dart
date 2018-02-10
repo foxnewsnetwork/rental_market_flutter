@@ -1,5 +1,5 @@
 part of fixtures;
 
-const userFixture = const User(
+const userFixture = const UserModel(
   fullName: 'Doge McMaster'
 );

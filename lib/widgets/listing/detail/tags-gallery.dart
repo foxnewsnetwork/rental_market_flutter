@@ -1,7 +1,7 @@
 part of widgets;
 
 class TagsGallery extends StatelessWidget {
-  final List<Tag> tags;
+  final List<TagModel> tags;
   final VoidCallback onPressed;
 
   TagsGallery({
@@ -19,7 +19,7 @@ class TagsGallery extends StatelessWidget {
       height: 75.0,
       child: new ListView(
         scrollDirection: Axis.horizontal,
-        children: tags.map((Tag tag) => 
+        children: tags.map((TagModel tag) => 
           new _TagButton(
             tag: tag, 
             onPressed: onPressed
@@ -32,7 +32,7 @@ class TagsGallery extends StatelessWidget {
 
 class _TagButton extends StatelessWidget {
   final VoidCallback onPressed;
-  final Tag tag;
+  final TagModel tag;
 
   _TagButton({
     Key key,

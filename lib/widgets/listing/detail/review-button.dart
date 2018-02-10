@@ -6,7 +6,7 @@ part of widgets;
 /// 
 /// ![](https://raw.githubusercontent.com/foxnewsnetwork/ixd-rental-market/master/journal/ch15/review-btn.png)
 class ReviewButton extends StatelessWidget {
-  final ReviewAggregate reviewAggregate;
+  final ReviewAggregateModel reviewAggregate;
   final VoidCallback onTap;
   final bool enabled;
   final bool selected;

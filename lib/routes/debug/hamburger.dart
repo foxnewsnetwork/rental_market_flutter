@@ -15,7 +15,7 @@ class DebugHamburgerRoute extends StatelessWidget {
       body: new Container(
         width: 275.0,
         child: new HamburgerMenu(
-          user: new User(
+          user: new UserModel(
             fullName: 'Doge McMasters'
           ),
           onPressed: (String routeName) { },
