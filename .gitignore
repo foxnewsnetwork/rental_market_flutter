@@ -1,0 +1,14 @@
+.DS_Store
+.atom/
+.idea
+.vscode/
+.packages
+.pub/
+build/
+ios/.generated/
+packages
+pubspec.lock
+.flutter-plugins
+
+# api keys and app deploy secrets
+lib/config/secrets.dart
