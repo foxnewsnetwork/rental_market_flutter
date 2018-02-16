@@ -47,8 +47,6 @@ class AppRouter {
       handler: new Handler(
         type: HandlerType.route,
         handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-          String title = params['id'];
-
           return new StoreProvider(
             store: store,
             child: new ListingDetailRoute()

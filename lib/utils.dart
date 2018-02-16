@@ -9,5 +9,4 @@ part './utils/fetch.dart';
 part './utils/icon.dart';
 part './utils/maps.dart';
 part './utils/maybe.dart';
-part './utils/sanity.dart';
 part './utils/styles.dart';

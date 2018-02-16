@@ -28,3 +28,4 @@ part './widgets/listing/detail/review-button/rating-stars.dart';
 part './widgets/listing/detail/review-button/ratings-bar-graph.dart';
 
 part './widgets/home/index/chip-row.dart';
+part './widgets/home/index/product-aisle.dart';

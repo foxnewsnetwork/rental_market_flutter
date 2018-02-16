@@ -1,5 +1,7 @@
 part of routes;
 
+const double _preferredTabBarHeight = 50.0;
+
 class HomeIndexRoute extends StatelessWidget {
   static const String routeName = '/';
 
@@ -45,8 +47,27 @@ class HomeIndexRoute extends StatelessWidget {
   Widget _buildPageContent(TagModel category) {
     return new ListView(
       children: <Widget>[
-        _connectChipRow()
+        _connectChipRow(),
+        _connectProductAisles(category)
       ]
+    );
+  }
+
+  Widget _connectProductAisles(TagModel category) {
+    return new StoreConnector(
+      rebuildOnChange: false,
+      converter: (Store<AppState> store) =>
+        store.state.routesState.homeIndex.aisles,
+      builder: (BuildContext context, List<ProductAisleModel> aisles) =>
+        new Column(
+          children: aisles.map((aisle) => 
+            new ProductAisle(
+              name: aisle.name,
+              products: aisle.products,
+              onTap: () {},
+            )
+          ).toList(),
+        )
     );
   }
 
@@ -83,14 +104,17 @@ class HomeIndexRoute extends StatelessWidget {
         converter: (Store<AppState> store) => store.state.routesState.homeIndex.title,
         builder: (BuildContext context, title) => new Text(title),
       ),
-      bottom: new TabBar(
-        isScrollable: true,
-        tabs: <Widget>[
-          new Tab(text: 'Home'),
-          new Tab(text: 'Kitchen'),
-          new Tab(text: 'Power Tools'),
-          new Tab(text: 'Sensors')
-        ],
+      bottom: new PreferredSize(
+        preferredSize: const Size.fromHeight(_preferredTabBarHeight),
+        child: new StoreConnector(
+          converter: (Store<AppState> store) =>
+            store.state.routesState.homeIndex.categories,
+          builder: (BuildContext context, List<TagModel> categories) =>
+            new TabBar(
+              isScrollable: true,
+              tabs: categories.map((tag) => new Tab(text: tag.displayName)).toList(),
+            )
+        ),
       ),
       actions: <Widget>[
         new IconButton(
