@@ -6,6 +6,7 @@ class HomeIndexRouteState {
   final HamburgerModel hamburger;
   final List<TagModel> tags;
   final List<TagModel> categories;
+  final List<ProductAisleModel> aisles;
 
   const HomeIndexRouteState({
     this.title: 'Rental Market',
@@ -19,6 +20,14 @@ class HomeIndexRouteState {
       const TagModel(displayName: 'Kitchen'),
       const TagModel(displayName: 'Power Tools'),
       const TagModel(displayName: 'Sensors'),
+    ],
+    this.aisles: const <ProductAisleModel>[
+      ProductAisleModel.initial,
+      ProductAisleModel.initial,
+      ProductAisleModel.initial,
+      ProductAisleModel.initial,
+      ProductAisleModel.initial,
+      ProductAisleModel.initial,
     ]
   });
 

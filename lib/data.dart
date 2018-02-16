@@ -8,6 +8,8 @@ part './data/models/tag.dart';
 part './data/models/user.dart';
 part './data/models/hamburger.dart';
 part './data/models/gallery-image.dart';
+part './data/models/product-overview.dart';
+part './data/models/product-aisle.dart';
 
 part './data/states/app.dart';
 part './data/states/routes.dart';

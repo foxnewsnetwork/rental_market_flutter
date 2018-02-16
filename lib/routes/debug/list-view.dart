@@ -31,36 +31,4 @@ class DebugListViewRoute extends StatelessWidget {
       itemBuilder: _itemBuilder,
     );
   }
-
-  Widget _dogeList() {
-    return new ListView(
-      children: <Widget>[
-        new Image.asset('images/dogelog.jpg'),
-        new Image.asset('images/dogelog.jpg'),
-        new Image.asset('images/dogelog.jpg'),
-        new Image.asset('images/dogelog.jpg'),
-        new Image.asset('images/dogelog.jpg')
-      ],
-    );
-  }
-
-  Widget _lazyDogeList() {
-    return new ListView.builder(
-      itemCount: 3,
-      itemBuilder: _itemBuilder,
-    );
-  }
-
-  Widget _mixedLazyList() {
-    return new ListView.builder(
-      itemCount: 10,
-      itemBuilder: (BuildContext context, int index) { 
-        if (index % 2 == 0) {
-          return new Image.asset('images/dogelog.jpg');
-        } else {
-          return new Text('images/dogelog.jpg');
-        }
-      },
-    );
-  }
 }
