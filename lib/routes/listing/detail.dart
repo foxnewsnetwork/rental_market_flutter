@@ -40,7 +40,7 @@ class ListingDetailRoute extends StatelessWidget {
     builder: (BuildContext context, List<GalleryImageModel> images) =>
       new GalleryPreview(
         seeAllPressed: () {},
-        imageURIs: images.map((image) => image.previewImage),
+        imageURIs: images.map((image) => image.previewImage).toList(),
       ),
   );
 
