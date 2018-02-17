@@ -29,30 +29,26 @@ class AppRouter {
     return _instance;
   }
 
+  Handler _buildRouteHandler({ Widget route }) {
+    return new Handler(
+      type: HandlerType.route,
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+        return new StoreProvider(
+          store: store,
+          child: route
+        );
+      }
+    );
+  }
+
   AppRouter._map() {
     router.define(
       HomeIndexRoute.routeName,
-      handler: new Handler(
-        type: HandlerType.route,
-        handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-          return new StoreProvider(
-            store: store,
-            child: new HomeIndexRoute()
-          );
-        }
-      )
+      handler: _buildRouteHandler(route: new HomeIndexRoute())
     );
     router.define(
       ListingDetailRoute.routeName,
-      handler: new Handler(
-        type: HandlerType.route,
-        handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-          return new StoreProvider(
-            store: store,
-            child: new ListingDetailRoute()
-          );
-        }
-      )
+      handler: _buildRouteHandler(route: new ListingDetailRoute())
     );
     router.define(
       'debug/hamburger',
