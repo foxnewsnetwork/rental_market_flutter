@@ -7,6 +7,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import './widgets.dart';
 import './data.dart';
 import './reducers.dart';
+import './actions.dart';
 
 part './routes/debug/hamburger.dart';
 part './routes/debug/icons.dart';

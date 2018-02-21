@@ -1,6 +1,7 @@
 part of routes;
 
-const double _preferredTabBarHeight = 50.0;
+const double _preferredTabBarHeight = kTextTabBarHeight;
+const double _preferredAppBarHeight = kToolbarHeight + kTextTabBarHeight;
 
 class HomeIndexRoute extends StatelessWidget {
   static const String routeName = '/';
@@ -22,7 +23,14 @@ class HomeIndexRoute extends StatelessWidget {
 
   Widget _buildPage() {
     return new Scaffold(
-      appBar: _buildAppBar(),
+      appBar: new PreferredSize(
+        preferredSize: const Size.fromHeight(_preferredAppBarHeight),
+        child: new StoreConnector(
+          converter: (Store<AppState> store) => store.state.routesState.homeIndex.search,
+          builder: (BuildContext context, SearchModel search) =>
+            search.isActive ? _buildSearchBar(search) : _buildAppBar(),
+        ),
+      ),
       drawer: new StoreConnector(
         converter: (Store<AppState> store) => store.state.routesState.homeIndex.hamburger,
         builder: _buildHamburger,
@@ -98,6 +106,23 @@ class HomeIndexRoute extends StatelessWidget {
     );
   }
 
+  Widget _buildSearchBar(SearchModel search) {
+    final TextEditingController queryController = new TextEditingController(text: search.query);
+
+    return new AppBar(
+      leading: new BackButton(
+        color: Colors.blueAccent
+      ),
+      backgroundColor: Colors.white,
+      title: new TextField(
+        autofocus: true,
+        decoration: const InputDecoration(
+          hintText: 'Search listings...'
+        ),
+        controller: queryController,
+      )
+    );
+  }
   Widget _buildAppBar() {
     return new AppBar(
       title: new StoreConnector(
@@ -117,10 +142,20 @@ class HomeIndexRoute extends StatelessWidget {
         ),
       ),
       actions: <Widget>[
-        new IconButton(
-          icon: const Icon(Icons.search),
-          onPressed:  () {},
-        )
+        new StoreConnector(
+          converter: (Store<AppState> store) => 
+            (BuildContext context) => store.dispatch(
+              new EnableSearchHomeRouteAction(
+                context: context,
+                onRemove: () => store.dispatch(const DisableSearchHomeRouteAction())
+              )
+            ),
+          builder: (BuildContext context, ContextCallback onPressed) =>
+            new IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () => onPressed(context),
+            )
+        ),
       ],
     );
   }
