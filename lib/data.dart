@@ -10,8 +10,16 @@ part './data/models/hamburger.dart';
 part './data/models/gallery-image.dart';
 part './data/models/product-overview.dart';
 part './data/models/product-aisle.dart';
+part './data/models/search.dart';
 
 part './data/states/app.dart';
 part './data/states/routes.dart';
 part './data/states/routes/home/index.dart';
 part './data/states/routes/listing/detail.dart';
+
+/// Similar to the [VoidCallback] except
+/// takes a BuildContext.
+/// 
+/// Typically I will use this to affect transitions
+/// and navigation
+typedef void ContextCallback(BuildContext context);
