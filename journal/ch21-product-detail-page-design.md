@@ -80,3 +80,20 @@ Here are some todos for me to fix on my detail page
 - additional details should go below
 - product name and owner should go into the header
 - review summary should go into the header area
+
+## Hero Header
+
+The hero header is a combination of an hero image with an app bar. 
+
+![](./assets/ch21/hero-header.png)
+
+Presumably, the benefits of this is that we can combine a very visually appealing header (i.e. hero image) with the standard header functionality.
+
+>Note: the app bar icons are all given shadows so that they contrast properly against the image background
+
+## Page Title
+
+In line with summarizing the most important details up-front, I have all the important information in the page-title section
+
+![](./assets/ch21/page-title.png)
+
