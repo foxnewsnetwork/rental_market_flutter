@@ -97,3 +97,48 @@ In line with summarizing the most important details up-front, I have all the imp
 
 ![](./assets/ch21/page-title.png)
 
+## Button Bar
+
+The button bar has the main interactions of the page. I may consider adding in a floating action bar later (if appropriate)
+
+![](./assets/ch21/button-bar.png)
+
+## Description
+
+For now, we only show the two-row tagline of what is a much more detailed and formatted description section (complete with questions and whatnot)
+
+![](./assets/ch21/description.png)
+
+It will be a todo for me to figure out exactly how this page should appear
+
+## Review Entry
+
+It probably helps to add some reviews directly on the front page as per design by playstore, so I'm doing the same:
+
+![](./assets/ch21/review-entry.png)
+
+## Redesign
+
+All together, the full redesign looks like the following:
+
+![](./assets/ch21/detail-redesign.png)
+
+Some questions to ask:
+
+Q: What should I do with the now missing page tags?
+
+Q: Where should I put additional details on payment terms
+
+Q: What about a Q&A section
+
+Q: Should location area be swapped with description read me?
+
+Q: Should there be a floating action button
+
+Q: Page main button row be underneath the description tab?
+
+Q: Should the review summary bar be higher?
+
+Q: Should I make a review summary badge?
+
+Q: Should gallery images be higher?
