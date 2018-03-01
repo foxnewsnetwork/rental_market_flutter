@@ -125,7 +125,7 @@ All together, the full redesign looks like the following:
 
 Some questions to ask:
 
-Q: What should I do with the now missing page tags?
+Q: What should I do with the now missing page tags`?
 
 Q: Where should I put additional details on payment terms
 
